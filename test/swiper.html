@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body,ul{
+      margin: 0;
+    }
+    .swiper{
+      width: 100vw;
+      height: 60vh;
+      background-color: blue;
+      overflow: hidden;
+    }
+    .content{
+      width: 100vw;
+      height: 100vh;
+      background-color: red;
+      display: flex;
+      align-items: center;/*垂直居中·*/
+    }
+    ul{
+      padding-left: 0;
+      width: 500vw;
+      transform: translateZ(0);
+    }
+    li{
+      float: left;
+      display: flex;
+      justify-content: center;/*水平居中*/
+      align-items: center;
+      list-style: none;
+      width: 100vw;
+      height: 60vh;
+    }
+    li:nth-child(1){
+           background-color: #33ff68;
+         }
+    li:nth-child(2){
+      background-color: #e127ff;
+    }
+    li:nth-child(3){
+      background-color: #1c25ff;
+    }
+    li:nth-child(4){
+      background-color: #ffa000;
+    }
+    li:nth-child(5){
+      background-color: #33ff68;
+    }
+    span:nth-child(1){
+      background-color: #4ffaff;
+    }
+    span:nth-child(2){
+      background-color: #d972ff;
+    }
+    span:nth-child(3){
+      background-color: #0cff12;
+    }
+    span:nth-child(4){
+      background-color: #646eff;
+    }
+    span:nth-child(5){
+      background-color: #ff48a0;
+    }
+    li>span{
+      display: block;
+      width: 80%;
+      height: 80%;
+    }
+    .img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color:rgb(0,0,0);
+      height:  100%;
+      filter: blur(20px);
+    }
+  </style>
+</head>
+<body>
+<div class="content">
+  <div class="swiper">
+    <div class="bg_list"><div class="img"></div></div>
+    <ul>
+      <li><span></span></li>
+      <li><span></span></li>
+      <li><span></span></li>
+      <li><span></span></li>
+      <li><span></span></li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
+<script>
+  var oul = document.querySelector('ul')
+  var ali = document.querySelectorAll('LI')
+  // 这个方法肯定不行因为手机不一样这个获取的是像素所以不可以
+  // var oul.style.width=ali[0].offsetWidth*ali.length
+   oul.style.width=ali.length+'00vw'//用字符串来解决乘法的效果
+</script>
